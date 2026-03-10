@@ -1,0 +1,238 @@
+/* Site Header Styles */
+.site-header {
+  width: 100%;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: "Jacques Francois", serif;
+  background: #C3C1AF;
+  color: #5F7E7B;
+}
+
+body {
+  margin: 0;
+  font-family: "Jacques Francois", serif;
+  background: #f5f5f5;
+  color: #222;
+}
+
+/* Hero Header */
+.hero-header {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Main card */
+.main-card {
+  background: #F0EFE6;
+  border-radius: 24px;
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 32px 48px;
+  font-size: 1.2rem;
+  color: #5F7E7B;
+}
+
+/* Piazza cards container */
+.piazza-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 32px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+/* Single card */
+.piazza-card {
+  background: #F0EFE6;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 220px;
+  overflow: hidden;
+  text-align: center;
+  color: #5F7E7B;
+}
+
+/* Image */
+.piazza-card img {
+  width: 320px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 24px;
+  margin: 24px;
+}
+
+/* Text */
+.piazza-info {
+  padding: 24px 32px;
+  flex: 1;
+}
+
+.piazza-info h2 {
+  margin: 0 0 12px 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.piazza-info p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Final card */
+.final-card {
+  background: #F0EFE6;
+  border-radius: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 32px 48px;
+  font-size: 1.1rem;
+  color: #5F7E7B;
+}
+
+/* Footer */
+.homepage-footer {
+  background: #C3C1AF;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  width: 100%;
+  margin-top: 48px;
+}
+
+/* Mobile / Tablet */
+@media (max-width: 768px) {
+  /* HERO */
+  .hero-header {
+    height: 280px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(28px, 7vw, 44px);
+    padding: 0 16px;
+    overflow-wrap: anywhere;
+  }
+
+  /* MAIN + FINAL CARDS */
+  .main-card,
+  .final-card {
+    margin: 20px 16px;
+    padding: 20px 16px;
+    border-radius: 18px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* IMPORTANT FIX: stack text + right image in main-card on mobile */
+  .main-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  /* If your right-side image uses .piazza-img (as in your screenshot) */
+  .piazza-img {
+    width: 100%;
+    max-width: 100% !important; /* overrides inline max-width:320px */
+    height: auto;
+    margin: 0 !important;       /* remove side margins that can cause overflow */
+    display: block;
+    object-fit: cover;
+  }
+
+  /* Safety: any image inside main-card becomes responsive */
+  .main-card img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    display: block;
+  }
+
+  /* PIAZZA CARDS LIST */
+  .piazza-cards {
+    margin: 20px auto;
+    padding: 0 16px;
+    gap: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Each piazza-card stacks vertically */
+  .piazza-card {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+    min-height: 0;
+    border-radius: 18px;
+  }
+
+  .piazza-card img {
+    width: 100%;
+    height: 200px;
+    margin: 0;
+    border-radius: 18px 18px 0 0;
+    display: block;
+  }
+
+  .piazza-info {
+    padding: 16px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .piazza-info h2 {
+    font-size: 1.2rem;
+  }
+
+  .piazza-info p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .homepage-footer {
+    margin-top: 24px;
+    padding: 16px 12px;
+  }
+}
